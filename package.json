@@ -1,0 +1,70 @@
+{
+  "name": "kaybear",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "android-bundle": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "android-linux": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.6.2",
+    "color": "1.0.3",
+    "i18n-js": "^3.5.0",
+    "lodash": "4.17.10",
+    "moment": "2.13.0",
+    "native-base": "^2.13.8",
+    "prop-types": "^15.6.2",
+    "react": "16.9.0",
+    "react-native": "0.61.5",
+    "react-native-add-calendar-event": "^3.0.0",
+    "react-native-calendar-events": "^1.7.3",
+    "react-native-calendars": "^1.217.0",
+    "react-native-gesture-handler": "^1.0.15",
+    "react-native-root-toast": "^3.1.2",
+    "react-native-vector-icons": "^6.3.0",
+    "react-native-webview": "^8.0.1",
+    "react-navigation": "3.3.0",
+    "react-redux": "^7.1.1",
+    "redux": "^4.0.4",
+    "redux-form": "^8.2.6",
+    "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.3",
+    "redux-persist": "^5.10.0",
+    "redux-thunk": "^2.3.0",
+    "remote-redux-devtools": "^0.5.16",
+    "scheduler": "^0.12.0",
+    "styled-components": "^3.4.5"
+  },
+  "devDependencies": {
+    "@babel/core": "7.6.2",
+    "@babel/runtime": "7.6.2",
+    "@react-native-community/eslint-config": "0.0.3",
+    "babel-jest": "24.9.0",
+    "eslint": "5.16.0",
+    "jest": "24.9.0",
+    "metro-react-native-babel-preset": "0.52.0",
+    "react-test-renderer": "16.9.0",
+    "babel-eslint": "7.2.3",
+    "eslint-plugin-flowtype": "2.35.0",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-jsx-a11y": "6.0.2",
+    "eslint-plugin-prettier": "2.1.2",
+    "eslint-plugin-react": "7.1.0",
+    "eslint-plugin-react-native": "3.0.1",
+    "flow-bin": "0.78.0",
+    "flow-typed": "2.5.1",
+    "husky": "0.14.3",
+    "prettier": "1.5.3"
+  },
+  "jest": {
+    "preset": "react-native",
+    "setupFiles": [
+      "jest/setup.js"
+    ]
+  }
+}

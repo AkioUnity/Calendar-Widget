@@ -1,0 +1,109 @@
+package com.kaybear.helpers
+
+import com.kaybear.R
+import com.kaybear.extensions.calDAVHelper
+import com.kaybear.extensions.eventTypesDB
+import com.kaybear.helpers.IcsExporter.ExportResult.*
+import com.kaybear.models.CalDAVCalendar
+import com.kaybear.models.Event
+import com.commons.activities.BaseSimpleActivity
+import com.commons.extensions.getFileOutputStream
+import com.commons.extensions.toast
+import com.commons.extensions.writeLn
+import com.commons.helpers.ensureBackgroundThread
+import com.commons.models.FileDirItem
+import java.io.BufferedWriter
+import java.io.File
+
+class IcsExporter {
+    enum class ExportResult {
+        EXPORT_FAIL, EXPORT_OK, EXPORT_PARTIAL
+    }
+
+    private var eventsExported = 0
+    private var eventsFailed = 0
+    private var calendars = ArrayList<CalDAVCalendar>()
+
+    fun exportEvents(activity: BaseSimpleActivity, file: File, events: ArrayList<Event>, showExportingToast: Boolean, callback: (result: ExportResult) -> Unit) {
+        val fileDirItem = FileDirItem(file.absolutePath, file.name)
+        activity.getFileOutputStream(fileDirItem, true) {
+            if (it == null) {
+                callback(EXPORT_FAIL)
+                return@getFileOutputStream
+            }
+
+            ensureBackgroundThread {
+                calendars = activity.calDAVHelper.getCalDAVCalendars("", false)
+                if (showExportingToast) {
+                    activity.toast(R.string.exporting)
+                }
+
+                it.bufferedWriter().use { out ->
+                    out.writeLn(BEGIN_CALENDAR)
+                    out.writeLn(CALENDAR_PRODID)
+                    out.writeLn(CALENDAR_VERSION)
+                    for (event in events) {
+                        out.writeLn(BEGIN_EVENT)
+                        event.title.replace("\n", "\\n").let { if (it.isNotEmpty()) out.writeLn("$SUMMARY:$it") }
+                        event.description.replace("\n", "\\n").let { if (it.isNotEmpty()) out.writeLn("$DESCRIPTION$it") }
+                        event.importId.let { if (it.isNotEmpty()) out.writeLn("$UID$it") }
+                        event.eventType.let { out.writeLn("$CATEGORY_COLOR${activity.eventTypesDB.getEventTypeWithId(it)?.color}") }
+                        event.eventType.let { out.writeLn("$CATEGORIES${activity.eventTypesDB.getEventTypeWithId(it)?.title}") }
+                        event.lastUpdated.let { out.writeLn("$LAST_MODIFIED:${Formatter.getExportedTime(it)}") }
+                        event.location.let { if (it.isNotEmpty()) out.writeLn("$LOCATION:$it") }
+
+                        if (event.getIsAllDay()) {
+                            out.writeLn("$DTSTART;$VALUE=$DATE:${Formatter.getDayCodeFromTS(event.startTS)}")
+                            out.writeLn("$DTEND;$VALUE=$DATE:${Formatter.getDayCodeFromTS(event.endTS + DAY)}")
+                        } else {
+                            event.startTS.let { out.writeLn("$DTSTART:${Formatter.getExportedTime(it * 1000L)}") }
+                            event.endTS.let { out.writeLn("$DTEND:${Formatter.getExportedTime(it * 1000L)}") }
+                        }
+
+                        out.writeLn("$STATUS$CONFIRMED")
+                        Parser().getRepeatCode(event).let { if (it.isNotEmpty()) out.writeLn("$RRULE$it") }
+
+                        fillReminders(event, out)
+                        fillIgnoredOccurrences(event, out)
+
+                        eventsExported++
+                        out.writeLn(END_EVENT)
+                    }
+                    out.writeLn(END_CALENDAR)
+                }
+
+                callback(when {
+                    eventsExported == 0 -> EXPORT_FAIL
+                    eventsFailed > 0 -> EXPORT_PARTIAL
+                    else -> EXPORT_OK
+                })
+            }
+        }
+    }
+
+    private fun fillReminders(event: Event, out: BufferedWriter) {
+        event.getReminders().forEach {
+            val reminder = it
+            out.apply {
+                writeLn(BEGIN_ALARM)
+                if (reminder.type == REMINDER_NOTIFICATION) {
+                    writeLn("$ACTION$DISPLAY")
+                } else {
+                    writeLn("$ACTION$EMAIL")
+                    val attendee = calendars.firstOrNull { it.id == event.getCalDAVCalendarId() }?.accountName
+                    if (attendee != null) {
+                        writeLn("$ATTENDEE$MAILTO$attendee")
+                    }
+                }
+                writeLn("$TRIGGER-${Parser().getDurationCode(reminder.minutes.toLong())}")
+                writeLn(END_ALARM)
+            }
+        }
+    }
+
+    private fun fillIgnoredOccurrences(event: Event, out: BufferedWriter) {
+        event.repetitionExceptions.forEach {
+            out.writeLn("$EXDATE:$it")
+        }
+    }
+}

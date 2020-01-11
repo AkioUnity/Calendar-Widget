@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.kaybear"
+    android:installLocation="auto">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name='android.permission.WAKE_LOCK' />
+    <uses-permission
+        android:name="android.permission.USE_FINGERPRINT"
+        tools:node="remove"/>
+
+    <uses-feature
+        android:name="android.hardware.faketouch"
+        android:required="false"/>
+
+    <application
+        android:name="com.kaybear.MainApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_launcher_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name="com.kaybear.activities.SplashActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/SplashTheme"/>
+
+        <activity
+            android:name="com.kaybear.activities.MainActivity"
+            android:launchMode="singleTask">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:resource="@xml/searchable"/>
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:scheme="content"/>
+                <data android:scheme="file"/>
+                <data android:mimeType="text/x-vcalendar"/>
+                <data android:mimeType="text/calendar"/>
+                <data android:mimeType="application/ics"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:mimeType="time/epoch"/>
+                <data android:host="com.android.calendar"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.item/event"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.kaybear.activities.WidgetMonthlyConfigureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyWidgetConfigTheme">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.commons.activities.CustomizationActivity"
+            android:label="@string/customize_colors"
+            android:parentActivityName="com.kaybear.activities.SettingsActivity"/>
+
+        <activity
+            android:name="com.kaybear.activities.EventActivity"
+            android:launchMode="singleTask"
+            android:parentActivityName="com.kaybear.activities.MainActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT"/>
+                <action android:name="android.intent.action.INSERT"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.item/event"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT"/>
+                <action android:name="android.intent.action.INSERT"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.dir/event"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.kaybear.activities.SelectTimeZoneActivity"
+            android:parentActivityName="com.kaybear.activities.EventActivity">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:resource="@xml/searchable" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.kaybear.activities.SettingsActivity"
+            android:label="@string/settings"
+            android:parentActivityName="com.kaybear.activities.MainActivity"/>
+
+        <activity
+            android:name="com.kaybear.activities.ManageEventTypesActivity"
+            android:label="@string/event_types"
+            android:parentActivityName="com.kaybear.activities.SettingsActivity"/>
+
+        <activity
+            android:name="com.kaybear.activities.SnoozeReminderActivity"
+            android:theme="@style/Theme.Transparent"/>
+
+        <receiver
+            android:name=".helpers.MyWidgetMonthlyProvider"
+            android:icon="@drawable/img_widget_monthly_preview"
+            android:label="@string/widget_monthly">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_monthly_info"/>
+        </receiver>
+	
+	 <activity
+            android:name="com.kaybear.MainActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+	<activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+
+        <service
+            android:name=".services.WidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"/>
+
+        <service
+            android:name=".services.WidgetServiceEmpty"
+            android:permission="android.permission.BIND_REMOTEVIEWS"/>
+
+        <service android:name=".services.SnoozeService"/>
+
+        <service
+            android:name=".jobs.CalDAVUpdateListener"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+
+        <receiver android:name=".receivers.NotificationReceiver"/>
+
+        <receiver android:name=".receivers.CalDAVSyncReceiver"/>
+
+        <receiver android:name=".receivers.BootCompletedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+        <activity-alias
+            android:name=".activities.SplashActivity.Orange"
+            android:enabled="true"
+            android:icon="@mipmap/ic_launcher"
+            android:roundIcon="@mipmap/ic_launcher"
+            android:targetActivity="com.kaybear.activities.SplashActivity">
+
+        </activity-alias>
+    </application>
+</manifest>

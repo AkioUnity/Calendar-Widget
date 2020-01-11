@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Basit Takvim</string>
+    <string name="app_launcher_name">Takvim</string>
+    <string name="change_view">Görünümü değiştir</string>
+    <string name="daily_view">Günlük görünüm</string>
+    <string name="weekly_view">Haftalık görünüm</string>
+    <string name="monthly_view">Aylık görünüm</string>
+    <string name="yearly_view">Yıllık görünüm</string>
+    <string name="simple_event_list">Basit etkinlik listesi</string>
+    <string name="no_upcoming_events">Yaklaşan etkinlikleriniz yok gibi görünüyor.</string>
+    <string name="go_to_today">Bugüne git</string>
+    <string name="go_to_date">Go to date</string>
+    <string name="upgraded_from_free">Hey,\n\nseems like you upgraded from the old free app. You have to migrate locally stored events manually via exporting in an .ics file, then importing. You can find both export/import buttons at the main screen menu.\n\nYou can then uninstall the old version, which has an \'Upgrade to Pro\' button at the top of the app settings. You will then only have to reset your app settings.\n\nThanks!</string>
+
+    <!-- Widget titles -->
+    <string name="widget_monthly">Aylık takvim</string>
+    <string name="widget_list">Takvim etkinlik listesi</string>
+
+    <!-- Event -->
+    <string name="event">Durum</string>
+    <string name="edit_event">Etkinliği Düzenle</string>
+    <string name="new_event">Yeni Etkinlik</string>
+    <string name="create_new_event">Yeni etkinlik oluştur</string>
+    <string name="duplicate_event">Tekrarlanan etkinlik</string>
+    <string name="title_empty">Başlık boş olamaz</string>
+    <string name="end_before_start">Etkinlik başladığından daha erken bitemez</string>
+    <string name="event_added">Etkinlik başarıyla eklendi</string>
+    <string name="event_updated">Etkinlik başarıyla güncellendi</string>
+    <string name="filter_events_by_type">Etkinlikleri türe göre filtrele</string>
+    <string name="please_fill_location">Lütfen haritada gösterilecek bir yeri doldurun</string>
+    <string name="public_event_notification_text">Bir etkinlik yaklaşıyor</string>
+
+    <!-- Event Repetition -->
+    <string name="repetition">Tekrarla</string>
+    <string name="no_repetition">Tekrarlama yok</string>
+    <string name="daily">Günlük</string>
+    <string name="weekly">Haftalık</string>
+    <string name="monthly">Aylık</string>
+    <string name="yearly">Yıllık</string>
+    <string name="weeks_raw">hafta</string>
+    <string name="months_raw">ay</string>
+    <string name="years_raw">yıl</string>
+    <string name="repeat_till">Şu kadar tekrarla:</string>
+    <string name="forever">Sonsuza kadar</string>
+    <string name="event_is_repeatable">Etkinlik tekrarlanabilir</string>
+    <string name="selection_contains_repetition">Seçim tekrarlanan etkinlikleri içeriyor</string>
+    <string name="delete_one_only">Yalnızca seçilen etkinlikleri sil</string>
+    <string name="delete_future_occurrences">Bu ve gelecekteki tüm etkinlikleri sil</string>
+    <string name="delete_all_occurrences">Tüm tekrarlanan etkinlikleri sil</string>
+    <string name="update_one_only">Yalnızca seçilen etkinlikleri güncelle</string>
+    <string name="update_all_occurrences">Tüm etkinlikleri güncelle</string>
+    <string name="repeat_till_date">Şu tarihe kadar tekrarla</string>
+    <string name="stop_repeating_after_x">X etkinlikten sonra tekrarlamayı durdur</string>
+    <string name="repeat_forever">Sonsuza kadar tekrarla</string>
+    <string name="times">kere</string>
+    <string name="repeat">Tekrarla</string>
+    <string name="repeat_on">Tekrarlama açık</string>
+    <string name="every_day">Her gün</string>
+    <string name="selected_days">Seçilen günlerde</string>
+    <string name="the_same_day">Aynı gün</string>
+    <string name="the_last_day">Son gün</string>
+    <string name="repeat_on_the_same_day_monthly">Her ay aynı günde tekrarla</string>
+    <string name="repeat_on_the_last_day_monthly">Ayın son gününde tekrarla</string>
+    <string name="repeat_on_the_same_day_yearly">Her yıl aynı günde tekrarla</string>
+    <string name="repeat_every_m">Her tekrar</string>
+    <string name="every_m">Her</string>
+    <string name="first_m">ilk</string>
+    <string name="second_m">ikinci</string>
+    <string name="third_m">üçüncü</string>
+    <string name="fourth_m">dördüncü</string>
+    <string name="last_m">son</string>
+
+    <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
+    <!-- used in repetition, like "Every first Sunday" -->
+    <string name="repeat_every_f">Her tekrar</string>
+    <string name="every_f">Her</string>
+    <string name="first_f">ilk</string>
+    <string name="second_f">ikinci</string>
+    <string name="third_f">üçüncü</string>
+    <string name="fourth_f">dördüncü</string>
+    <string name="last_f">son</string>
+
+    <!-- Birthdays -->
+    <string name="birthdays">Doğum günleri</string>
+    <string name="add_birthdays">Kişi doğum günlerini ekle</string>
+    <string name="no_birthdays">Hiçbir doğum günü bulunamadı</string>
+    <string name="no_new_birthdays">No new birthdays have been found</string>
+    <string name="birthdays_added">Doğum günleri başarıyla eklendi</string>
+
+    <!-- Anniversaries -->
+    <string name="anniversaries">Yıldönümleri</string>
+    <string name="add_anniversaries">Kişi yıldönümlerini ekle</string>
+    <string name="no_anniversaries">Yıldönümleri bulunamadı</string>
+    <string name="no_new_anniversaries">No new anniversaries have been found</string>
+    <string name="anniversaries_added">Yıldönümleri başarıyla eklendi</string>
+
+    <!-- Event Reminders -->
+    <string name="reminder">Hatırlatma</string>
+    <string name="before">önce</string>
+    <string name="add_another_reminder">Başka hatırlatma ekle</string>
+    <string name="event_reminders">Etkinlik hatırlatıcılar</string>
+
+    <!-- Event attendees -->
+    <string name="add_another_attendee">Add another attendee</string>
+    <string name="my_status">My status:</string>
+    <string name="going">Going</string>
+    <string name="not_going">Not going</string>
+    <string name="maybe_going">Maybe going</string>
+    <string name="invited">Invited</string>
+
+    <!-- Time zones -->
+    <string name="enter_a_country">Enter a country or time zone</string>
+
+    <!-- Export / Import -->
+    <string name="import_events">Etkinlikleri içe aktar</string>
+    <string name="export_events">Etkinlikleri dışa aktar</string>
+    <string name="import_events_from_ics">Etkinlikleri .ics dosyasından içe aktar</string>
+    <string name="export_events_to_ics">Etkinlikleri .ics dosyasına aktar</string>
+    <string name="default_event_type">Varsayılan etkinlik türü</string>
+    <string name="export_past_events_too">Geçmiş etkinlikleri de dışa aktar</string>
+    <string name="include_event_types">Etkinlik türlerini ekle</string>
+    <string name="filename_without_ics">Dosya adı (.ics olmadan)</string>
+    <string name="override_event_types">Dosyadaki etkinlik türlerini geçersiz kıl</string>
+
+    <!-- Event details -->
+    <string name="title">Başlık</string>
+    <string name="location">Konum</string>
+    <string name="description">Açıklama</string>
+    <string name="all_day">Tüm-gün</string>
+
+    <!-- Weekly view -->
+    <string name="week">Hafta</string>
+
+    <!-- Event types -->
+    <string name="event_types">Etkinlik türleri</string>
+    <string name="add_new_type">Yeni tür ekle</string>
+    <string name="edit_type">Türü düzenle</string>
+    <string name="type_already_exists">Bu başlığı taşıyan bir tür zaten var</string>
+    <string name="color">Renk</string>
+    <string name="regular_event">Düzenli etkinlik</string>
+    <string name="cannot_delete_default_type">Varsayılan etkinlik türü silinemez</string>
+    <string name="select_event_type">Bir etkinlik türü seçin</string>
+    <string name="move_events_into_default">Etkilenen etkinlikleri varsayılan etkinlik türüne taşı</string>
+    <string name="remove_affected_events">Etkilenen etkinlikleri kalıcı olarak kaldır</string>
+    <string name="unsync_caldav_calendar">CalDAV takvimini kaldırmak için, senkronizasyonu kaldırmalısınız</string>
+
+    <!-- Holidays -->
+    <string name="holidays">Tatiller</string>
+    <string name="add_holidays">Tatil ekle</string>
+    <string name="national_holidays">Ulusal tatiller</string>
+    <string name="religious_holidays">Dini tatiller</string>
+    <string name="holidays_imported_successfully">Tatiller \"Tatiller\" etkinlik türüne başarıyla aktarıldı</string>
+    <string name="importing_some_holidays_failed">Bazı etkinlikler içe aktarılamadı</string>
+    <string name="importing_holidays_failed">Tatiller içe aktarılamadı</string>
+
+    <!-- Settings -->
+    <string name="manage_event_types">Etkinlik türlerini yönet</string>
+    <string name="start_day_at">Gün başlangıcı</string>
+    <string name="end_day_at">Gün bitişi</string>
+    <string name="week_numbers">Hafta sayılarını göster</string>
+    <string name="vibrate">Hatırlatma bildiriminde titre</string>
+    <string name="reminder_sound">Hatırlatma sesi</string>
+    <string name="no_ringtone_picker">Zil sesi ayarlayabilen uygulama yok</string>
+    <string name="no_ringtone_selected">Hiçbiri</string>
+    <string name="day_end_before_start">Gün başladığından daha erken bitemez</string>
+    <string name="caldav_sync">CalDAV senkronizasyonu</string>
+    <string name="event_lists">Etkinlik listeleri</string>
+    <string name="display_past_events">Geçmişten gelen etkinlikleri görüntüle</string>
+    <string name="replace_description_with_location">Etkinlik açıklamasını konumla değiştir</string>
+    <string name="delete_all_events">Tüm etkinlikleri sil</string>
+    <string name="delete_all_events_confirmation">Tüm etkinlikleri silmek istediğinizden emin misiniz? Bu, etkinlik türlerinizi ve diğer ayarlarınızı bozulmamış halde bırakır.</string>
+    <string name="show_a_grid">Izgara göster</string>
+    <string name="loop_reminders">Kapatılana kadar hatırlatıcıları tekrarla</string>
+    <string name="dim_past_events">Geçmiş etkinlikleri karart</string>
+    <string name="events">Etkinlikler</string>
+    <string name="reminder_stream">Hatırlatıcılar tarafından kullanılan ses akışı</string>
+    <string name="system_stream">Sistem</string>
+    <string name="alarm_stream">Alarm</string>
+    <string name="notification_stream">Bildirim</string>
+    <string name="ring_stream">Zil sesi</string>
+    <string name="use_last_event_reminders">Yeni etkinlik için son etkinlikler\' hatırlatıcılarını varsayılan olarak kullan</string>
+    <string name="default_reminder_1">Varsayılan hatırlatıcı 1</string>
+    <string name="default_reminder_2">Varsayılan hatırlatıcı 2</string>
+    <string name="default_reminder_3">Varsayılan hatırlatıcı 3</string>
+    <string name="view_to_open_from_widget">Etkinlik listesi widget\'ından açılacak görünüm</string>
+    <string name="last_view">Son görünüm</string>
+    <string name="new_events">Yeni etkinlikler</string>
+    <string name="default_start_time">Varsayılan başlangıç zamanı</string>
+    <string name="next_full_hour">Gelecek tam saat</string>
+    <string name="default_duration">Varsayılan süre</string>
+    <string name="last_used_one">Son kullanılan</string>
+    <string name="other_time">Başka zaman</string>
+    <string name="highlight_weekends">Highlight weekends on some views</string>
+    <string name="allow_changing_time_zones">Allow changing event time zones</string>
+
+    <!-- CalDAV sync -->
+    <string name="caldav">CalDAV</string>
+    <string name="select_caldav_calendars">Senkronize edilecek takvimleri seç</string>
+    <string name="manage_synced_calendars">Senkronize edilmiş takvimleri yönet</string>
+    <string name="store_locally_only">Yalnızca yerel olarak depola</string>
+    <string name="refresh_caldav_calendars">CalDAV takvimlerini yenile</string>
+    <string name="refreshing">Yenileniyor…</string>
+    <string name="refreshing_complete">Yenileme tamamlandı</string>
+    <string name="editing_calendar_failed">Takvim düzenlenme başarısız</string>
+    <string name="syncing">Senkronize ediliyor…</string>
+    <string name="synchronization_completed">Senkronizasyon tamamlandı</string>
+    <string name="select_a_different_caldav_color">Farklı bir renk seçin (yalnızca yerel olarak uygulanabilir)</string>
+    <string name="insufficient_permissions">Seçili takvime yazmanıza izin verilmiyor</string>
+    <string name="caldav_event_not_found">Event not found. Please enable CalDAV sync for the appropriate calendar in the app settings.</string>
+
+    <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
+    <!-- used in repetition, like "Every last Sunday" -->
+    <string name="monday_alt">Pazartesi</string>
+    <string name="tuesday_alt">Salı</string>
+    <string name="wednesday_alt">Çarşamba</string>
+    <string name="thursday_alt">Perşembe</string>
+    <string name="friday_alt">Cuma</string>
+    <string name="saturday_alt">Cumartesi</string>
+    <string name="sunday_alt">Pazar</string>
+
+    <!-- List widget config example events -->
+    <string name="sample_title_1">Egzersiz</string>
+    <string name="sample_description_1">Bacak günü</string>
+    <string name="sample_title_2">Can ile buluşma</string>
+    <string name="sample_description_2">Gülhane parkında</string>
+    <string name="sample_title_3">Kütüphane</string>
+    <string name="sample_title_4">Merve ile öğle yemeği</string>
+    <string name="sample_description_4">Şehir meydanında</string>
+    <string name="sample_title_5">Kahve zamanı</string>
+
+    <!-- FAQ -->
+    <string name="faq_1_title">\"Tatil ekle\" düğmesiyle içe aktarılan tatilleri nasıl kaldırabilirim?</string>
+    <string name="faq_1_text">Tatiller, \"Tatiller\" olarak adlandırılan yeni bir etkinlik türüne eklenir. Ayarlar -> Etkinlik Türlerini Yönet\'e gidip, belirlenen etkinlik türüne uzun basıp çöp kutusunu seçerek silebilirsiniz.</string>
+    <string name="faq_2_title">Etkinliklerimi Google Takvim\'le veya CalDAV\'ı destekleyen başka bir hizmetle senkronize edebilir miyim?</string>
+    <string name="faq_2_text">Evet, uygulama ayarlarından \"CalDAV senkronizasyonu\" seçeneğini işaretleyin ve senkronize etmek istediğiniz takvimleri seçin. Bununla birlikte, cihaz ve sunucular arasındaki senkronizasyonu ele alan bazı üçüncü taraf uygulamalarına ihtiyacınız olacaktır.
+        Bu durumda bir Google takvimini senkronize etmek istiyorsanız, resmi Takvim uygulaması işi yapar. Diğer takvimler için, DAVx5 gibi üçüncü taraf senkronizasyon adaptörüne ihtiyacınız olacaktır.</string>
+    <string name="faq_3_title">Görsel hatırlatıcıları görüyorum ama ses duymuyorum. Ne yapabilirim?</string>
+    <string name="faq_3_text">Sadece gerçek hatırlatıcıyı görüntülemekle kalmaz, aynı zamanda ses çalmak da sistemden büyük ölçüde etkilenir. Herhangi bir ses duyamıyorsanız, uygulama ayarlarına girmeyi,
+        \"Hatırlatıcılar tarafından kullanılan ses akışına\" basmayı ve bunu farklı bir değere değiştirmeyi deneyin. Hala işe yaramazsa, belirli bir akış sessiz değilse, Ses ayarlarınızı kontrol edin.</string>
+    <string name="faq_4_title">Does the app support time zones?</string>
+    <string name="faq_4_text">Yes, it does. By default all events are created in your current time zone. If you want to change an events\' time zone,
+        you will first have to enable the time zone picker at the app settings, then change it at the Event Details screen. It is disabled by default as most people won\'t need it.</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
+    <string name="app_title">Simple Calendar Pro - Events &amp; Reminders</string>
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Be notified of the important moments in your life.</string>
+    <string name="app_long_description">
+        Simple Calendar Pro is a fully customizable, offline calendar designed to do exactly what a calendar should do. <b>No complicated features, unnecessary permissions and no ads!</b>
+
+        Whether you’re organizing single or recurring events, birthdays, anniversaries, business meetings, appointments or anything else, Simple Calendar Pro makes it <b>easy to stay organized</b>. With an incredible variety of <b>customization options</b> you can customize event reminders, notification sounds, calendar widgets and how the app looks.
+
+        Daily, weekly and monthly views make checking your upcoming events &amp; appointments a breeze. You can even view everything as a simple list of events rather than in calendar view, so you <b>know exactly what’s coming up in your life and when. </b>
+
+        ----------------------------------------------------------
+        <b>Simple Calendar Pro – Features &amp; Benefits</b>
+        ----------------------------------------------------------
+
+        ✔️ No ads or annoying popups
+        ✔️ No internet access needed, giving you more privacy &amp; security
+        ✔️ Only the bare minimum permissions required
+        ✔️ Emphasis on simplicity – does what a calendar needs to do!
+        ✔️ Open source
+        ✔️ Fully customizable themes &amp; calendar / event widgets
+        ✔️ Translated into 29 languages
+        ✔️ Export settings to .txt files to import to another device
+        ✔️ CalDAV calendar sync supported to sync events across devices
+        ✔️ Daily, weekly, monthly, yearly &amp; event views on the calendar
+        ✔️ Supports exporting &amp; importing events via .ics files
+        ✔️ Set multiple event reminders, customize event reminder sound and vibration
+        ✔️ Snooze option for reminders
+        ✔️ Easily add holidays, birthdays, anniversaries &amp; appointments
+        ✔️ Customize events – start time, duration, reminders etc
+        ✔️ Add event attendees to each event
+        ✔️ Use as a personal calendar or a business calendar
+        ✔️ Choose between reminders &amp; email notifications to alert you about an event
+
+        DOWNLOAD SIMPLE CALENDAR PRO – THE SIMPLE OFFLINE CALENDAR WITH NO ADS!
+
+        <b>Check out the full suite of Simple Tools here:</b>
+        https://www.simplemobiletools.com
+
+        <b>Facebook:</b>
+        https://www.facebook.com/simplemobiletools
+
+        <b>Reddit:</b>
+        https://www.reddit.com/r/SimpleMobileTools
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
